@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+.App{
+    background-image: url('./assets/bg.jpg');
+    overflow: hidden;
+}
+.MuiTextField-root{
+    width: 100%;
+    background-color: white;
+    border-radius: .23rem;
+    border-color:rgb(42, 30, 166) ;
+}
+.MuiFormLabel-root{
+    color: rgb(42, 30, 166) !important;
+}
+.MuiIconButton-root{
+    transition: all ease 400ms !important;
+}
+/* .MuiIconButton-root:hover{
+    background-color: #F15A29 !important;
+    transform: translateY(-8px);
+} */
+.splide__list{
+    height: 20rem !important;
+}
+@media only screen and (max-width: 540px) {
+    .splide__list{
+        height: 15rem !important;
+    }
+}
+.splide__slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.splide__pagination__page.is-active {
+    background: #F15A29 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+    text-decoration: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::selection {
+    background: #ff3115;
+    text-shadow: none;
+    color: #fff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.MuiFormLabel-root {
+    /* color: white !important; */
 }
-
-.App-link {
-  color: #61dafb;
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    padding: 7.5px 12px !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (max-width: 393px) {
+    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+        padding: 0px 7px !important;
+        font-size: 0.675rem !important;
+    }
 }
