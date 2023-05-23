@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import { IconButton, Typography } from '@mui/material';
-import {  EmailRounded, Facebook, LinkedIn } from '@mui/icons-material';
+import {  EmailRounded, Facebook, Instagram, WhatsApp } from '@mui/icons-material';
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import PopUpContact from './PopContact/PopUpContact';
+import { useEffect } from 'react';
 const ContactAbout = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
     return (
         <ContactAboutMainContainer>
             <AnimationOnScroll animateOnce={true} animateIn="animate__bounceIn">
@@ -23,14 +27,17 @@ const ContactAbout = () => {
                         </Typography>
                         <Typography variant='subtitle2' >Talk to our authorities for all your queries related to home shifting and/or office relocation services in Bhubaneswar and elsewhere in India.</Typography>
                         <IconButtonContainer>
-                            <IconButton style={{ backgroundColor: 'black', color: 'white' }} size='large'>
+                            <IconButton href='mailto:info@cloudrelocations.com' target='_blank' style={{ backgroundColor: 'black', color: 'white' }} size='large'>
                                 <EmailRounded />
                             </IconButton>
-                            <IconButton style={{ backgroundColor: 'black', color: 'white' }} size='large'>
+                            <IconButton href='https://www.facebook.com/cloudrelocations/' target='_blank' style={{ backgroundColor: 'black', color: 'white' }} size='large'>
                                 <Facebook />
                             </IconButton>
-                            <IconButton style={{ backgroundColor: 'black', color: 'white' }} size='large'>
-                                <LinkedIn />
+                            <IconButton href=' https://www.instagram.com/cloudrelocations/' target='_blank' style={{ backgroundColor: 'black', color: 'white' }} size='large'>
+                                <Instagram />
+                            </IconButton>
+                            <IconButton href='https://wa.me/message/USGBMDQOXDTJI1' target='_blank' style={{ backgroundColor: 'black', color: 'white' }} size='large'>
+                                <WhatsApp />
                             </IconButton>
                         </IconButtonContainer>
                     </AboutUs>
@@ -89,13 +96,12 @@ const ContactAboutContainer = styled.div`
 `;
 
 const AboutUs = styled.div`
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     display: grid; 
     place-content: center;
     text-align: justify;
     h6{
-        margin-bottom: 1.2rem;
-        margin-Top: 1.2rem;
+        margin-Top: 1rem;
     }
   @media screen and (max-width: 540px) {
     h3{

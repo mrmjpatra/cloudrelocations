@@ -4,33 +4,37 @@ import { Typography } from '@mui/material';
 import { serviceList } from './serviceList';
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
-    return (
+  return (
+    <div style={{ position: 'relative' }}>
+      <ServiceContainer>
+      </ServiceContainer>
+      <BlurBg>
+      </BlurBg>
+      <TextContainer>
+        <Typography variant='h4' color='#FE5D1C'>OUR SERVICES</Typography>
+        <hr color='#FE5D1C' />
+      </TextContainer>
+      <AnimationOnScroll animateOnce={true} animateIn="animate__backInUp">
         <div style={{ position: 'relative' }}>
-            <ServiceContainer>
-            </ServiceContainer>
-            <BlurBg>
-            </BlurBg>
-            <TextContainer>
-                <Typography variant='h4' color='#FE5D1C'>OUR SERVICES</Typography>
-                <hr color='#FE5D1C' />
-            </TextContainer>
-            <AnimationOnScroll animateOnce={true} animateIn="animate__backInUp">
-                <div style={{ position: 'relative' }}>
-                    <ProvidedServiceContainer>
-                        {
-                            serviceList.map(service => 
-                            <ServiceCard key={service.id}>
-                                <service.icon  style={{ color: '#FE5D1C', textAlign: 'center' }} />
-                                <Typography variant='body1'>{service.title}</Typography>
-                            </ServiceCard>)
-                        }
-                    </ProvidedServiceContainer>
-                </div>
-            </AnimationOnScroll>
+          <ProvidedServiceContainer>
+            {
+              serviceList.map(service =>
+                <Link to={service.link} key={service.id}>
+                  <ServiceCard >
+                    <service.icon style={{ color: '#FE5D1C', textAlign: 'center' }} />
+                    <Typography variant='body1'>{service.title}</Typography>
+                  </ServiceCard>
+                </Link>
+              )
+            }
+          </ProvidedServiceContainer>
         </div>
-    )
+      </AnimationOnScroll>
+    </div>
+  )
 }
 
 export default Services;
@@ -57,6 +61,9 @@ const TextContainer = styled.div`
     width: 15rem;
     left: 41%;
     top: 10%;
+    h4{
+      font-size: 1.7rem;
+    }
     hr{
         color: #FE5D1C;
         width: 30%;
@@ -94,6 +101,9 @@ const ProvidedServiceContainer = styled.div`
     left: 13%;
     padding: 2rem;
     bottom: -6rem;
+    a{
+      color: black;
+    }
   @media screen and (max-width: 820px) {
     left: 5%;
     bottom: 0;

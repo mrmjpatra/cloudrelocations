@@ -1,5 +1,5 @@
 import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
-import { faBan, faBook, faDownload, faFileDownload, faLocationDot, faQuestion } from '@fortawesome/free-solid-svg-icons';
+import {  faBook, faFileDownload, faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 
@@ -16,7 +16,7 @@ export const topHeaderList:topHeaderListType[]=[
         id:1,
         title:'Online Payment',
         icon:faCreditCard,
-        link:'payment'
+        link:'/payment'
     },
     // {
     //     id:2,
@@ -27,30 +27,30 @@ export const topHeaderList:topHeaderListType[]=[
         id:3,
         title:'Enquiry',
         icon:faQuestion,
-        link:'enquiry'
+        link:'/contact'
 
     },
-    {
-        id:4,
-        title:'Tracking',
-        icon:faLocationDot,
-        link:'tracking'
+    // {
+    //     id:4,
+    //     title:'Tracking',
+    //     icon:faLocationDot,
+    //     link:'tracking'
 
-    },
+    // },
 
     {
         id:5,
         title:'Claims',
         icon:faBook,
-        link:'claims'
+        link:'/claims'
 
     },
-    {
-        id:6,
-        title:'Beware Of Fake',
-        icon:faBan,
-        link:'payment'
-    },
+    // {
+    //     id:6,
+    //     title:'Beware Of Fake',
+    //     icon:faBan,
+    //     link:'payment'
+    // },
     {
         id:7,
         title:'Download Brouchers',

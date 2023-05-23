@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import WhyCloudRelocation from '../../components/WhyCloudRelocation';
 import HowItWork from '../../components/HowItWork';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Household from './Household';
 import Office from './Office';
 import Local from './Local';
@@ -54,8 +54,8 @@ const HomeIndex = () => {
   return (
     <MainContainer>
         <img src="https://www.24x7packers.com/images/bg/household.jpg" alt="" />
-        <WhyCloudRelocation/>
         <WhichComp/>
+        <WhyCloudRelocation/>
        <HowItWork/>
     </MainContainer>
   )

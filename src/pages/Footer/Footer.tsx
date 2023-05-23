@@ -90,19 +90,19 @@ const Footer = () => {
                             <hr style={{ width: '50%' }} color='#F05A29' />
                             <ul>
                                 <li>
-                                    <Link to='/cloud-relocations-bhubaneswar'>Bhubaneswar</Link> </li>
+                                    <Link to='/city/bhubaneswar'>Bhubaneswar</Link> </li>
                                 <li>
-                                    <Link to='/cloud-relocations-bangloare'>Bangloare</Link></li>
+                                    <Link to='/city/bangloare'>Bangloare</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-pune'>Pune</Link></li>
+                                    <Link to='/city/pune'>Pune</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-mumbai'>Mumbai</Link></li>
+                                    <Link to='/city/mumbai'>Mumbai</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-hyderabad'>Hyderabad</Link></li>
+                                    <Link to='/city/hyderabad'>Hyderabad</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-delhi'>Delhi</Link></li>
+                                    <Link to='/city/delhi'>Delhi</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-kolkata'>Kolkata</Link></li>
+                                    <Link to='/city/kolkata'>Kolkata</Link></li>
                             </ul>
                         </Cities>
                     </FooterTop>

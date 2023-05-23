@@ -1,12 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import About from '../pages/About/About'
 import Home from '../pages/Home'
-import Service from '../pages/Service/Service'
 import Contact from '../pages/Contact/Contact'
 import Location from '../pages/Location/Location'
 import Blog from '../pages/Blog/Blog'
 import Achievements from '../pages/Achievements/Achievements'
-import Process from '../pages/Process/Process'
 import Privacy from '../pages/Privacy'
 import TermsCondition from '../pages/TermsCondition'
 import HomeIndex from '../pages/Shifting/HomeIndex'
@@ -14,13 +12,19 @@ import Payment from '../pages/Payment/Payment'
 import CityWise from '../pages/CityWise/CityWise'
 import CityToCity from '../pages/CityWise/CityToCity'
 import Claims from '../pages/Claims/Claims'
+import WhyCloud from '../pages/About/Why/WhyCloud'
+import OurProcess from '../components/OurProcess'
+import Pet from '../pages/Shifting/Pet'
+import Service from '../pages/Service/Service'
 
 export const RoutesConfig = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
-      <Route path='/about/experience' element={<About />} />
+      <Route path='/whycloud' element={<WhyCloud/>}/>
+      <Route path='/service' element={<Service/>}/>
+      {/* <Route path='/about/experience' element={<About />} />
       <Route path='/about/history' element={<About />} />
       <Route path='/about/values' element={<About />} />
       <Route path='/about/investments' element={<About />} />
@@ -46,8 +50,8 @@ export const RoutesConfig = () => {
       <Route path='/about/service-policy' element={<About />} />
       <Route path='/about/quality-policy' element={<About />} />
       <Route path='/about/packing-policy' element={<About />} />
-      <Route path='/about/training-policy' element={<About />} />
-      <Route path='/service/domestic' element={<Service />} />
+      <Route path='/about/training-policy' element={<About />} /> */}
+      {/* <Route path='/service/domestic' element={<Service />} />
       <Route path='/service/domestic/domestic-shifting' element={<Service />} />
       <Route path='/service/domestic/household-shifting' element={<Service />} />
       <Route path='/service/domestic/office-shifting' element={<Service />} />
@@ -59,9 +63,10 @@ export const RoutesConfig = () => {
       <Route path='/service/bulk-commercial' element={<Service />} />
       <Route path='/service/parcel-service' element={<Service />} />
       <Route path='/service/factory-shifting' element={<Service />} />
-      <Route path='/service/warehousing' element={<Service />} />
-      <Route path='/service/odc' element={<Service />} />
-      <Route path='/process/shifting/packing' element={<Process />} />
+      <Route path='/service/warehousing' element={<Service />} /> */}
+      {/* <Route path='/service/odc' element={<Service />} /> */}
+
+      {/* <Route path='/process/shifting/packing' element={<Process />} />
       <Route path='/process/shifting/storage' element={<Process />} />
       <Route path='/process/shifting/chapp' element={<Process />} />
       <Route path='/process/shifting/double' element={<Process />} />
@@ -73,7 +78,9 @@ export const RoutesConfig = () => {
       <Route path='/process/traning-process/operation-team' element={<Process />} />
       <Route path='/process/traning-process/tracking' element={<Process />} />
       <Route path='/process/traning-process/delivery' element={<Process />} />
-      <Route path='/process/traning-process/claims' element={<Process />} />
+      <Route path='/process/traning-process/claims' element={<Process />} /> */}
+      <Route path='/process' element={<OurProcess />} />
+
       {/* Acheivement */}
       <Route path='/achievements/innovations' element={<Achievements />} />
       <Route path='/achievements/awards' element={<Achievements />} />
@@ -102,14 +109,9 @@ export const RoutesConfig = () => {
       <Route path='/car-shifting' element={<HomeIndex/>} />
       <Route path='/bike-shifting' element={<HomeIndex/>} />
       <Route path='/bulk-shifting' element={<HomeIndex/>} />
+      <Route path='/pet-shifting' element={<Pet/>} />
       <Route path='/payment' element={<Payment/>} />
-      <Route path='/cloud-relocations-bhubaneswar' element={<CityWise/>} />
-      <Route path='/cloud-relocations-delhi' element={<CityWise/>} />
-      <Route path='/cloud-relocations-bangloare' element={<CityWise/>} />
-      <Route path='/cloud-relocations-kolkata' element={<CityWise/>} />
-      <Route path='/cloud-relocations-pune' element={<CityWise/>} />
-      <Route path='/cloud-relocations-hyderabad' element={<CityWise/>} />
-      <Route path='/cloud-relocations-mumbai' element={<CityWise/>} />
+      <Route path='/city/:location' element={<CityWise/>} />
       <Route path='/shifting/*' element={<CityToCity/>} />
       <Route path='/claims' element={<Claims/>} />
     </Routes>

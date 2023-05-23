@@ -3,9 +3,9 @@ import { usePath } from '../../hooks/usePath';
 import { aboutMenuContent } from './aboutMenuContent';
 import styled from 'styled-components';
 const About = () => {
+  
   const path = usePath();
   const Component = aboutMenuContent.find(menu => menu.path === path)?.component || DefaultAbout;
-
   return (
     <>
       <Component />

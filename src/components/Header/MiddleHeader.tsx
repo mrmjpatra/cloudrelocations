@@ -5,9 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Modal } from '@mui/material';
 import PopUpContact from '../PopContact/PopUpContact2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const MiddleHeader = () => {
+  const location=useLocation().pathname;
+  console.log(location)
+  const city=location.indexOf('/city');
+  let cityName=''
+  if (city!==-1) {
+    cityName=location.slice(6)
+  }
+
   const [isOpen, setIsOpen] = useState(false);
   const myRef = useRef(null);
   const navigate = useNavigate();
@@ -28,7 +36,11 @@ const MiddleHeader = () => {
             <Dialer>
               <FontAwesomeIcon icon={faPhone} />
             </Dialer>
-            <span>+919006167900</span>
+            <span>
+              {
+                cityName==='bhubaneswar'?'+919006106900':'+919006167900'
+              }
+            </span>
           </DialerMenu>
         </a>
         <FreeQuote onClick={() => setIsOpen(true)}>

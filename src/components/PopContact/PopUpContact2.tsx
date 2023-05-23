@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Tab, Tabs, Typography } from '@mui/material';
+import { Box, IconButton, Tab, Tabs, Typography } from '@mui/material';
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import WithInCity from './WithInCity';
@@ -41,7 +41,7 @@ function a11yProps(index: number) {
 interface ChildProps {
   setIsOpen: (isOpen: boolean) => void;
 }
-const PopUpContact = React.forwardRef(({ setIsOpen }: ChildProps, ref: React.ForwardedRef<HTMLDivElement>)=> {
+const PopUpContact2 = React.forwardRef(({ setIsOpen }: ChildProps, ref: React.ForwardedRef<HTMLDivElement>)=> {
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -69,12 +69,12 @@ const PopUpContact = React.forwardRef(({ setIsOpen }: ChildProps, ref: React.For
       <TabPanel value={value} index={2}>
         <CityTempo />
       </TabPanel>
-      <Button variant='contained' color='error' onClick={()=>setIsOpen(false)}>Cancel</Button>
+
     </PopUpContactContainer>
   )
 });
 
-export default PopUpContact;
+export default PopUpContact2;
 const PopUpContactContainer = styled.div`
   /* background: linear-gradient(180deg,#F15A29,#ED1E24); */
   background-color: white;
@@ -83,9 +83,45 @@ const PopUpContactContainer = styled.div`
   color: #464646;
   font-size: 14px;
   border-radius: 1rem;
-  margin:1rem auto;
-  padding: 1.5rem;
+  margin:.2rem auto;
+  padding: 1rem;
   width: 35%;
+  h5{
+    margin: 1rem 0;
+  }
+  @media screen and (max-width: 912px) {
+    width: 100%;
+    font-size: 10px;
+    margin: 0;
+    h5{
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    width: 100%;
+    font-size: 10px;
+    margin: 0;
+    h5{
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    width: 100%;
+    font-size: 10px;
+    margin: 0;
+    h5{
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 393px) {
+   h5{
+    font-size: 1rem;
+    font-weight: 500;
+   }
+  }
     
 `;
 const TabContainer = styled.div`

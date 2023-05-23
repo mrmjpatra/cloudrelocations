@@ -1,63 +1,28 @@
-import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import WhyCloudRelocation from '../../components/WhyCloudRelocation'
 import HowItWork from '../../components/HowItWork'
-import { IconButton, Typography } from '@mui/material'
+import { IconButton, Modal, Typography } from '@mui/material'
 import { Options, Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { whyList } from '../../components/whycloudrelocationslist'
-import Bhubaneswar from './Bhubaneswar'
-import Bangloare from './Bangloare'
-import Delhi from './Delhi'
-import Hyderabad from './Hyderabad'
-import Pune from './Pune'
-import Kolkata from './Kolkata'
-import Mumbai from './Mumbai'
 import { topCityList } from './city'
 import { Link } from 'react-router-dom'
 import { LocationOn } from '@mui/icons-material'
-type conditionalCompType = {
-    name: string,
-    component: React.FC
-}
-const CityWise = () => {
-    const locations = useLocation()
-    const cityName = locations.pathname.slice(1).split('-')[2];
-    const City=cityName.slice(0, 1).toUpperCase() + cityName.slice(1);
-    const otherCityList=(topCityList.filter(item=>item.toLocaleLowerCase()!==City.toLocaleLowerCase())).sort();
+import PopUpContact2 from '../../components/PopContact/PopUpContact2'
+import logo from '../../assets/form.png'
+import PopUpContact from '../../components/PopContact/PopUpContact'
+import WhyCloudWithForm from '../../components/WhyCloudWithForm'
 
-    
-    const cityList: conditionalCompType[] = [
-        {
-            name: 'bhubaneswar',
-            component: Bhubaneswar
-        },
-        {
-            name: 'delhi',
-            component: Delhi
-        },
-        {
-            name: 'bangloare',
-            component: Bangloare
-        },
-        {
-            name: 'kolkata',
-            component: Kolkata
-        },
-        {
-            name: 'pune',
-            component: Pune
-        },
-        {
-            name: 'hyderabad',
-            component: Hyderabad
-        },
-        {
-            name: 'mumbai',
-            component: Mumbai
-        },
-    ]
-    const WhichComp: React.FC = cityList.find(city => city.name === cityName)?.component || (() => <div>hello</div>);
+
+const CityWise = () => {
+
+    const { location } = useParams();
+    const cityName = `${location?.slice(0, 1).toUpperCase()}${location?.slice(1).toLocaleLowerCase()}`;
+    const otherCityList = topCityList.filter(city => city.toLowerCase() !== cityName.toLowerCase())
+    const [isOpen, setIsOpen] = useState(false);
+    const myRef = useRef(null);
+
     const options: Options = {
         type: 'loop',
         gap: '1rem',
@@ -73,13 +38,13 @@ const CityWise = () => {
         },
         arrows: false
     };
-    useEffect(()=>{
-        window.scrollTo(0,0)
-    },[City])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [location])
     return (
         <MainContainer>
             <TopContainer>
-                <Typography variant='h2' color='#fd5d1c'>Welcome to Cloud Relocations at {City}</Typography>
+                <Typography variant='h2' color='#fd5d1c'>Welcome to Cloud Relocations at {cityName}</Typography>
 
                 <CityWiseCarousel>
                     <Splide options={options} aria-labelledby="autoplay-example-heading"
@@ -100,59 +65,70 @@ const CityWise = () => {
                 </CityWiseCarousel>
             </TopContainer>
 
-            <WhyCloudRelocation />
-            {/* <WhichComp/> */}
+            <ContactPopUpContainer>
+                <IconButton color='primary' onClick={() => setIsOpen(true)}>
+                    <img src={logo} alt="" />
+                </IconButton>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                    <PopUpContact2 setIsOpen={setIsOpen} ref={myRef} />
+                </Modal>
+            </ContactPopUpContainer>
             <SpecificCityComp>
-                <Typography variant='h3'>Cloud Relocations Service at {City}</Typography>
-                <hr  color='#F15A29' />
+                <Typography variant='h3'>Cloud Relocations Service at {cityName}</Typography>
+                <hr color='#F15A29' />
                 <Typography variant='body1'>
-                    Cloud Relocations is a leading packers and movers company based in {City}, specializing in providing seamless relocation services. With a firm commitment to excellence, we strive to make the daunting task of moving hassle-free and efficient for our valued clients.
+                    Cloud Relocations is a leading packers and movers company based in <b>{cityName}</b>, specializing in providing seamless relocation services. With a firm commitment to excellence, we strive to make the daunting task of moving hassle-free and efficient for our valued clients.
                 </Typography>
                 <Typography variant='body1'>
                     At Cloud Relocation, we understand that moving can be a stressful experience, whether it's a residential or commercial relocation. Therefore, we have tailored our services to cater to the unique needs and requirements of each client, ensuring a smooth and successful transition.
                 </Typography>
                 <Typography variant='body1'>
-                Our team of experienced professionals is dedicated to delivering top-notch service at every stage of the moving process. From packing and loading to transportation and unpacking, we handle every aspect of the relocation with utmost care and precision. We utilize high-quality packing materials and employ industry-best practices to ensure the safety and security of our clients' belongings during transit.
+                    Our team of experienced professionals is dedicated to delivering top-notch service at every stage of the moving process. From packing and loading to transportation and unpacking, we handle every aspect of the relocation with utmost care and precision. We utilize high-quality packing materials and employ industry-best practices to ensure the safety and security of our clients' belongings during transit.
                 </Typography>
                 <Typography variant='body1'>
-                Customer satisfaction is our top priority, and we go the extra mile to exceed expectations. Our knowledgeable and friendly staff work closely with clients to understand their specific needs and create customized relocation plans that are efficient and cost-effective. We believe in clear communication and transparency, keeping our clients informed and updated throughout the entire process.
+                    Customer satisfaction is our top priority, and we go the extra mile to exceed expectations. Our knowledgeable and friendly staff work closely with clients to understand their specific needs and create customized relocation plans that are efficient and cost-effective. We believe in clear communication and transparency, keeping our clients informed and updated throughout the entire process.
 
                 </Typography>
                 <Typography variant='body1'>
-                As a packers’ and movers’ company, we offer a comprehensive range of services. Whether it's local or long-distance moving, residential or commercial relocation, or even vehicle transportation, Cloud Relocations has the expertise and resources to handle it all. We are equipped with a modern fleet of vehicles and employ skilled drivers who ensure timely and secure delivery of goods to the desired destination.
+                    As a packers’ and movers’ company, we offer a comprehensive range of services. Whether it's local or long-distance moving, residential or commercial relocation, or even vehicle transportation, Cloud Relocations has the expertise and resources to handle it all. We are equipped with a modern fleet of vehicles and employ skilled drivers who ensure timely and secure delivery of goods to the desired destination.
 
                 </Typography>
                 <Typography variant='body1'>
-                Furthermore, we understand the importance of a well-managed timeline in the moving process. Our team works diligently to adhere to schedules and deadlines, minimizing any disruptions or delays.
+                    Furthermore, we understand the importance of a well-managed timeline in the moving process. Our team works diligently to adhere to schedules and deadlines, minimizing any disruptions or delays.
                 </Typography>
                 <Typography variant='body1'>
-                With our commitment to professionalism, reliability, and customer satisfaction, Cloud Relocations has earned a stellar reputation in the industry. Our track record of successful relocations and positive client testimonials speak to our dedication and expertise.
+                    With our commitment to professionalism, reliability, and customer satisfaction, Cloud Relocations has earned a stellar reputation in the industry. Our track record of successful relocations and positive client testimonials speak to our dedication and expertise.
                 </Typography>
                 <Typography variant='body1'>
-                If you are in need of a trustworthy packers and movers’ company in {City}, look no further than Cloud Relocations. Contact us today for a seamless and stress-free moving experience.
+                    If you are in need of a trustworthy packers and movers’ company in <b>{cityName}</b>, look no further than Cloud Relocations. Contact us today for a seamless and stress-free moving experience.
                 </Typography>
             </SpecificCityComp>
+            <ContactFormContainer>
+                <Typography variant='h3' textAlign={'center'} color='#FD5D1C'>Why Cloud Relocations ?</Typography>
+                <hr color='#FD5D1C' />
+                <WhyCloudWithForm />
+            </ContactFormContainer>
             <HowItWork />
             <ToOtherCity>
-                        <Typography textAlign='center' variant='h3' color='#FD5D1C'>{City} To Other City</Typography>
-                        <hr  color='#F15A29' />
-                        <CityListContainer>
-                           <ul>
-                            {
-                                
-                                otherCityList.map((city,index)=>
-                                   <Link to={`/shifting/${City.toLocaleLowerCase()}-to-${city.toLocaleLowerCase()}`} key={index}>
-                                     <li>
+                <Typography textAlign='center' variant='h3' color='#FD5D1C'>{cityName} To Other City</Typography>
+                <hr color='#F15A29' />
+                <CityListContainer>
+                    <ul>
+                        {
+
+                            otherCityList.map((city, index) =>
+                                <Link to={`/shifting/${cityName.toLocaleLowerCase()}-to-${city.toLocaleLowerCase()}`} key={index}>
+                                    <li>
                                         <IconButton color='error'>
-                                            <LocationOn/>
+                                            <LocationOn />
                                         </IconButton>
-                                       Cloud Relocations {City} to {city}
+                                        Cloud Relocations {cityName} to {city}
                                     </li>
-                                   </Link>
-                                )
-                            }
-                           </ul>
-                        </CityListContainer>
+                                </Link>
+                            )
+                        }
+                    </ul>
+                </CityListContainer>
             </ToOtherCity>
         </MainContainer>
     )
@@ -210,14 +186,14 @@ const SpecificCityComp = styled.div`
         text-align: justify;
     }
 `
-const ToOtherCity=styled.div`
+const ToOtherCity = styled.div`
     margin: 1rem 0;
     hr{
         width: 70%; 
         margin: 1rem auto;
     }
 `
-const CityListContainer=styled.div`
+const CityListContainer = styled.div`
     
     ul{
          display: grid;
@@ -233,4 +209,35 @@ const CityListContainer=styled.div`
             }
         }
     }
+`;
+const ContactPopUpContainer = styled.div`
+    position: relative;
+    img{
+        width: 5rem;
+        height: 7rem;
+        position: fixed;
+        right: 4rem;
+        bottom: 10rem;
+        z-index: 11;
+        border: .5px solid #616161;
+        border-radius: 0.2rem;
+    }
+`;
+
+const ContactFormContainer = styled.div`
+    background-color: whitesmoke;
+    hr{
+        width: 50%;
+        margin: 1rem auto;
+    }
+  @media screen and (max-width: 540px) {
+    padding: 0.4rem;
+    h3{
+        font-size: 2rem;
+    }
+    hr{
+        margin: .5rem auto;
+    }
+  }
+    
 `

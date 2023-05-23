@@ -14,6 +14,12 @@ const Bike = () => {
         <li>Copy of Insurance Policy</li>
         <li>Copy of Owner ID</li>
       </ul>
+      <Typography variant='body1'>Our network of over 1,200+ certified auto transport professionals incorporate a wide range of carriers and delivery specialists. We have the assets accessible to rapidly and securely transport any vehicle, cruiser, watercraft, gear, apparatus, RV, ATV, snowmobile or trailer!
+      </Typography>
+      <Typography variant='body1'>Car Carriers, Car Shifting, Car Transporters, Vehicle shifting services, car transport services
+      </Typography>
+      <Typography variant='body1'>Your vehicle will be transported on a close car carrier, generally observed conveying new cars to dealerships. Close carriers are the most financially savvy technique for transportation and give completely guaranteed, way to-entryway benefit. Finish the statement shape to one side to in a flash ascertain the cost of your transportation.
+      </Typography>
     </Container>
   )
 }

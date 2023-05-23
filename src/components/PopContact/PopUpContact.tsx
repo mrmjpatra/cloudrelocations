@@ -35,6 +35,8 @@ function a11yProps(index: number) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
+
+
 const PopUpContact = () => {
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -74,6 +76,7 @@ const PopUpContactContainer = styled.div`
   border-radius: 1rem;
   margin: auto;
   padding: 1.5rem;
+  width: 100%;
   @media screen and (max-width: 540px) {
     width: 100%;
     font-size: 10px;
@@ -88,9 +91,7 @@ const PopUpContactContainer = styled.div`
     font-size: 1rem;
     font-weight: 500;
    }
-  }
-
-    
+  }    
 `;
 const TabContainer = styled.div`
     border-bottom: 1;

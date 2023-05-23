@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import paymentpdf from '../../assets/payment.png'
+import paymentQR from '../../assets/payment.png'
 import { Typography } from '@mui/material'
 const Payment = () => {
     useEffect(()=>{
@@ -9,10 +9,18 @@ const Payment = () => {
    
   return (
     <Container>
-        <Typography textAlign='center' color='#fd5d1c' variant='h2'>24X7 PACKERS AND MOVERS ONLINE PAYMENT</Typography>
+        <Typography textAlign='center' color='#fd5d1c' variant='h3'>Cloud Relcations Online Payment</Typography>
         <hr color='#fd5d1c' />
         <PdfContainer>
-            <img src={paymentpdf} alt="" />
+           <QRReader>
+                 <img src={paymentQR} alt="" />
+           </QRReader>
+           <ContactDetails>
+                <Typography variant='h5'>Name : Cloud Relocations</Typography>
+                <Typography variant='h5'>Banking Name : Mr Subhrajeet Ray</Typography>
+                <Typography variant='h5'>Email : info@cloudrelocations.com </Typography>
+                <Typography variant='h5'>Phone Number: +919006167900</Typography>
+           </ContactDetails>
         </PdfContainer>
     </Container>
   )
@@ -28,13 +36,18 @@ const Container=styled.div`
     hr{
         width: 50%;
        text-align: center;
-       margin: 1rem 0;
+        margin: .5rem auto 1rem auto;
     }
 `
 const PdfContainer=styled.div`
-    width: 60%; /* Adjust the width as needed */
-    height: 1000px; /* Adjust the height as needed */
     display: flex;
     justify-content: center;
-   
+    align-items: center;
+    gap: 2rem;
+`
+const QRReader=styled.div`
+
+`
+const ContactDetails=styled.div`
+
 `

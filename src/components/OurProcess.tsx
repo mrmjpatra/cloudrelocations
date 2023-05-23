@@ -134,7 +134,6 @@ const OurProcessContainer = styled.div`
     background-color: whitesmoke;
     border-radius: .5rem;
     /* text-align: center; */
-    margin-top: 2rem;
     padding: 1rem;
 `;
 const ProcessContainer = styled.div`
