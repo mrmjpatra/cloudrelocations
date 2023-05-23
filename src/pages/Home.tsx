@@ -8,9 +8,12 @@ import Reviews from '../components/Reviews';
 import OurClients from '../components/OurClients';
 import WhyCloudRelocation from '../components/WhyCloudRelocation';
 import HowItWork from '../components/HowItWork';
+import { IconButton } from '@mui/material';
+import { WhatsApp } from '@mui/icons-material';
 
 
 const Home = () => {
+
   return (
     <HomeContainer>
        <HeaderContainer/>
@@ -22,11 +25,13 @@ const Home = () => {
        <OurClients/>
        <WhyCloudRelocation/>
        <HowItWork/>
+      
     </HomeContainer>
   )
 }
 
 export default Home;
 const HomeContainer=styled.div`
-        
+        position: relative;
 `;
+

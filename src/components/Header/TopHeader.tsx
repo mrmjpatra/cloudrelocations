@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
 import { topHeaderList } from './topheaderlist';
+import { Link } from 'react-router-dom';
 
 const TopHeader = () => {
   return (
@@ -11,7 +12,7 @@ const TopHeader = () => {
         topHeaderList.map(list =>
           <ListContainer key={list.id}>
             <FontAwesomeIcon icon={list.icon} />
-            <span> {list.title}</span>
+            <Link to={list.link}>{list.title}</Link>
             &nbsp;
             |
           </ListContainer>)
@@ -37,8 +38,11 @@ const ListContainer = styled.div`
   svg{
     color: #105e74;
   }
+  a{
+    color: black;
+  }
   :hover{
-    span{
+    a{
     color: white;
     }
   }

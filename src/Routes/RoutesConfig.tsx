@@ -12,6 +12,8 @@ import TermsCondition from '../pages/TermsCondition'
 import HomeIndex from '../pages/Shifting/HomeIndex'
 import Payment from '../pages/Payment/Payment'
 import CityWise from '../pages/CityWise/CityWise'
+import CityToCity from '../pages/CityWise/CityToCity'
+import Claims from '../pages/Claims/Claims'
 
 export const RoutesConfig = () => {
   return (
@@ -101,12 +103,15 @@ export const RoutesConfig = () => {
       <Route path='/bike-shifting' element={<HomeIndex/>} />
       <Route path='/bulk-shifting' element={<HomeIndex/>} />
       <Route path='/payment' element={<Payment/>} />
-      <Route path='/cloud-relocations-bbsr' element={<CityWise/>} />
+      <Route path='/cloud-relocations-bhubaneswar' element={<CityWise/>} />
       <Route path='/cloud-relocations-delhi' element={<CityWise/>} />
-      <Route path='/cloud-relocations-bangaloare' element={<CityWise/>} />
+      <Route path='/cloud-relocations-bangloare' element={<CityWise/>} />
       <Route path='/cloud-relocations-kolkata' element={<CityWise/>} />
       <Route path='/cloud-relocations-pune' element={<CityWise/>} />
       <Route path='/cloud-relocations-hyderabad' element={<CityWise/>} />
+      <Route path='/cloud-relocations-mumbai' element={<CityWise/>} />
+      <Route path='/shifting/*' element={<CityToCity/>} />
+      <Route path='/claims' element={<Claims/>} />
     </Routes>
   )
 }

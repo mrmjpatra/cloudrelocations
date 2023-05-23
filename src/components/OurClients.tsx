@@ -26,19 +26,19 @@ const OurClients = () => {
             <hr  color='#F15A29' />
             <Typography variant='h5' textAlign='center'>Who trusted us!</Typography>
             <ClientsCarousel>
-            <Splide options={options} aria-labelledby="autoplay-example-heading"
-                    hasTrack={false}>
-                    <SplideTrack>
-                            {
-                                clientsList.map((image,index)=> 
-                                    <SplideSlide key={index}>
-                                        <Card>
-                                            <img src={image} alt="" />
-                                        </Card>
-                                    </SplideSlide>)
-                            }
-                        </SplideTrack>
-                </Splide>
+                <Splide options={options} aria-labelledby="autoplay-example-heading"
+                        hasTrack={false}>
+                        <SplideTrack>
+                                {
+                                    clientsList.map((image,index)=> 
+                                        <SplideSlide key={index}>
+                                            <Card>
+                                                <img src={image} alt="" />
+                                            </Card>
+                                        </SplideSlide>)
+                                }
+                            </SplideTrack>
+                    </Splide>
             </ClientsCarousel>
         </OurClientsContainer>
     )

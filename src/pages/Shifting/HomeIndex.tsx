@@ -50,7 +50,7 @@ const HomeIndex = () => {
    const WhichComp:React.FC =citywise.find(city=>city.location===shifting)?.component || (() => <div>hello</div>);
     useEffect(()=>{
         window.scrollTo(0,0)
-    },[])
+    },[shifting])
   return (
     <MainContainer>
         <img src="https://www.24x7packers.com/images/bg/household.jpg" alt="" />

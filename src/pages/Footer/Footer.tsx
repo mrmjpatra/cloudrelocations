@@ -90,21 +90,19 @@ const Footer = () => {
                             <hr style={{ width: '50%' }} color='#F05A29' />
                             <ul>
                                 <li>
-                                    <Link to='/cloud-relocations-bbsr'>Bhubaneswar</Link> </li>
+                                    <Link to='/cloud-relocations-bhubaneswar'>Bhubaneswar</Link> </li>
                                 <li>
-                                    <Link to='/cloud-relocations-bbsr'>Bangalore</Link></li>
+                                    <Link to='/cloud-relocations-bangloare'>Bangloare</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-bbsr/cloud-relocations-bbsr'>Pune</Link></li>
+                                    <Link to='/cloud-relocations-pune'>Pune</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-bbsr'>Mumbai</Link></li>
+                                    <Link to='/cloud-relocations-mumbai'>Mumbai</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-bbsr'>Hyderabad</Link></li>
+                                    <Link to='/cloud-relocations-hyderabad'>Hyderabad</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-bbsr'>Delhi</Link></li>
+                                    <Link to='/cloud-relocations-delhi'>Delhi</Link></li>
                                 <li>
-                                    <Link to='/cloud-relocations-bbsr'>Kolkata</Link></li>
-                                <li>
-                                    <Link to='/cloud-relocations-bbsr'>Chennai</Link></li>
+                                    <Link to='/cloud-relocations-kolkata'>Kolkata</Link></li>
                             </ul>
                         </Cities>
                     </FooterTop>
@@ -267,7 +265,7 @@ const EmailAddress = styled.div`
     align-items: center;
     justify-content: center;
     p{
-        width: 80%;
+        width: 96%;
     }
     @media screen and (max-width: 820px) {
         row-gap: 0.2rem;
