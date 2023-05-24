@@ -1,10 +1,13 @@
 import { Typography } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
+import warehouseimg from '../../assets/warehouseimg.png'
+
 
 const Warehouse = () => {
   return (
     <Container>
+        <img src={warehouseimg} alt="" />
        <Typography variant='h3' color='#fd5d1c' textAlign='center'>Warehouse</Typography>
       <hr color='#fd5d1c' />
       <Typography variant='body1'>Cloud Relocations stands out among numerous organizations in the country that provide packing and moving services. While it may be challenging to choose the best and most reliable option from a multitude of firms, Cloud Relocations offers well-managed and efficient solutions for packing, moving, loading, unloading, as well as storage services in warehouses. Additionally, they offer a comprehensive range of logistics solutions, warehousing services, shipment arrangements, and door-to-door delivery.</Typography>
@@ -41,5 +44,20 @@ const Container = styled.div`
     font-weight: 500;
     color: red;
   }
-
+  @media screen and (max-width: 414px) {
+    margin: 0;
+    h3{
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    hr{
+      margin: .3rem auto;
+    }
+    p{
+      font-size: 1rem;
+    }
+    h5{
+      font-size: 1rem;
+    }
+  }
 `

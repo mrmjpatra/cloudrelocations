@@ -1,10 +1,12 @@
 import { Typography } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components';
+import householdimg from '../../assets/localshiftimg.png'
 
 const Local = () => {
   return (
     <Container>
+        <img src={householdimg} alt="" />
       <Typography variant='h3' color='#fd5d1c' textAlign='center'>Local Shifting</Typography>
       <hr color='#fd5d1c' />
       <Typography variant='body1'>We pride ourselves in being a reliable and experienced provider of residential moving services in Bhubaneswar and beyond, catering to all your household relocation needs, whether it's local or international. Allow us the opportunity to deliver our exceptional services to you, ensuring a smooth and stress-free moving experience at the best price possible.</Typography>
@@ -28,5 +30,17 @@ const Container = styled.div`
     margin: 1rem 0;
     text-align: justify;
   } 
-
+  @media screen and (max-width: 414px) {
+    margin: 0;
+    h3{
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    hr{
+      margin: .3rem auto;
+    }
+    p{
+      font-size: 1rem;
+    }
+  }
 `

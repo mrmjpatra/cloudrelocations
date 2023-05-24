@@ -42,7 +42,7 @@ const Reviews = () => {
                                                 <Typography>{item.location}</Typography>
                                             </PesonName>
                                             <Typography style={{textAlign:'justify'}}>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s” when an unknown printer took.
+                                            {item.review.length>80?`${item.review.substring(0,210)}...`:item.review}
                                             </Typography>
                                         </Card>
                                     </SplideSlide>)
@@ -57,7 +57,8 @@ const Reviews = () => {
 export default Reviews;
 
 const ReviewsContainer = styled.div`
-    
+    background-color: whitesmoke;
+    padding: 1rem 0;
 `;
 const ReviewTitle = styled.div`
   display: flex;
@@ -71,8 +72,10 @@ const ReviewTitle = styled.div`
         font-size: 1.2rem;
     }
   }
-  @media screen and (max-width: 393px) {
-        margin-top: 0.5rem;
+  @media screen and (max-width: 414px) {
+    h3{
+        font-size: 1.8rem;
+    }
       h5{
         font-size: 1rem;
       }
@@ -122,7 +125,7 @@ const Card=styled.div`
         height: 3.5rem;
     }
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
         width: 73%;
         border-radius: 0.5rem;
         padding: 0.5rem;

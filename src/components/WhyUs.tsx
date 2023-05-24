@@ -10,7 +10,7 @@ const WhyUs = () => {
                 <WhyUsLeft>
                     <Typography variant='h3' color='#F05A29'>WHY US</Typography>
                     <Typography variant='h4'>BEST MOVERS AROUND</Typography>
-                    <hr color='#F05A29' style={{ margin: '1rem 0', width: '50%' }} />
+                    <hr color='#F05A29'/>
                     <Typography variant='body2' color='#535353'>We have a head office at Bhubaneswar and operational offices at Bangalore, Pune, Hyderabad and Mumbai. Starting from March 2019 we are able to serve 50,00+ clients, 500+ business and 16+ branches in all over India and are still growing. Safe delivery with Customer satisfaction is our No#1 priority.
                     </Typography>
                     <li>
@@ -75,6 +75,10 @@ const WhyUsLeft = styled.div`
         line-height: 1.8rem;
         text-align: justify;
     }
+    hr{
+        width: 50%;
+        margin: 1rem 0;
+    }
   @media screen and (max-width: 820px) {
     margin-top: 2rem;
     h4{
@@ -107,7 +111,7 @@ const WhyUsLeft = styled.div`
         text-align: justify;
     }
     hr{
-        margin: .5rem auto;
+        margin: .2rem 0;
     }
   }
  

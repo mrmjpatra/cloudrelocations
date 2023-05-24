@@ -56,9 +56,7 @@ a{
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
     padding: 7.5px 12px !important;
 }
-@media only screen and (max-width: 393px) {
-    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
-        padding: 0px 7px !important;
-        font-size: 0.675rem !important;
-    }
-}
+
+
+
+

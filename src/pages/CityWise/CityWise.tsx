@@ -32,9 +32,13 @@ const CityWise = () => {
         height: '20rem',
         perPage: 3,
         breakpoints: {
-            820: {
+            912: {
                 perPage: 2,
             },
+            540:{
+                height:'13rem',
+                perPage: 1,
+            }
         },
         arrows: false
     };
@@ -138,6 +142,9 @@ export default CityWise;
 const MainContainer = styled.div`
     padding: 1rem 2rem ;
     background-color: white;
+  @media screen and (max-width: 912px) {
+    padding: 1rem;
+  }
 `;
 const TopContainer = styled.div`
     margin: 1rem 0;
@@ -150,7 +157,19 @@ const TopContainer = styled.div`
         padding-top: 2rem;
         text-align: center;
     }
-    `;
+  @media screen and (max-width: 1200px) {
+    border-radius: .5rem;
+    h2{
+        font-size: 2.2rem;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    border-radius: .5rem;
+    h2{
+        font-size: 1.4rem;
+    }
+  }
+`;
 const CityWiseCarousel = styled.div`
     border-radius: 1rem;
     margin: 0 1rem;
@@ -167,8 +186,18 @@ const Card = styled.div`
             width: 2rem;
             height: 2rem;
         }
-  @media screen and (max-width: 540px) {
-   
+  @media screen and (max-width: 912px) {
+    height: 10rem;
+    h5{
+        font-size: 1rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
   }
     
 `;
@@ -185,6 +214,29 @@ const SpecificCityComp = styled.div`
         font-size: 1.8rem;
         text-align: justify;
     }
+  @media screen and (max-width: 912px) {
+    h3{
+        font-size: 2.5rem;
+    }
+  }
+  @media screen and (max-width: 820px) {
+    h3{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    p{
+        font-size: 1.3rem;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    h3{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    p{
+        font-size: 1rem;
+    }
+  }
 `
 const ToOtherCity = styled.div`
     margin: 1rem 0;
@@ -192,9 +244,26 @@ const ToOtherCity = styled.div`
         width: 70%; 
         margin: 1rem auto;
     }
+  @media screen and (max-width: 912px) {
+    hr{
+        margin: .2rem auto;
+    }
+  }
+  @media screen and (max-width: 912px) {
+    h3{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 912px) {
+    padding-bottom: 2rem;
+    h3{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+  }
 `
 const CityListContainer = styled.div`
-    
     ul{
          display: grid;
          grid-template-columns: repeat(3,1fr);
@@ -209,6 +278,21 @@ const CityListContainer = styled.div`
             }
         }
     }
+  @media screen and (max-width: 912px) {
+    ul{
+        grid-template-columns:repeat(2,1fr) ;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    ul{
+        grid-template-columns:repeat(1,1fr) ;
+        padding-bottom: 2rem;
+    }
+    a{
+            font-size: .7rem;
+            font-weight: 100;
+    }
+  }
 `;
 const ContactPopUpContainer = styled.div`
     position: relative;
@@ -222,6 +306,28 @@ const ContactPopUpContainer = styled.div`
         border: .5px solid #616161;
         border-radius: 0.2rem;
     }
+  @media screen and (max-width: 540px) {
+    img{
+         width: 4rem;
+        height: 5rem;
+        bottom: 8rem;
+        right: 1rem;
+    }
+  }
+  @media screen and (max-width: 414px) {
+    img{
+        
+        bottom: 25%;
+        right: 3.5%;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    img{
+        
+        bottom: 15%;
+        right: 4%;
+    }
+  }
 `;
 
 const ContactFormContainer = styled.div`

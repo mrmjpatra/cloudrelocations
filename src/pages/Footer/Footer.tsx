@@ -19,17 +19,17 @@ const Footer = () => {
                         <Phone color='error' fontSize='large' />
                         <Typography variant='h5'>Phone Number</Typography>
                         <Typography variant='body1'>
-                            +919006106900
-                            +919006167900
-                            {/* +919005009937
-                            +919005003387 */}
+                        <a href="tel:+919006106900">+919006106900</a>&nbsp;
+                        <a href="tel:+919006167900">+919006167900</a>
                         </Typography>
                     </PhoneNumber>
                     <hr />
                     <EmailAddress>
                         <Email color='error' fontSize='large' />
                         <Typography variant='h5'>Email Address</Typography>
-                        <Typography variant='body1'>cloudrelocations@gmail.com</Typography>
+                        <Typography variant='body1'>
+                            <a href="mailto:cloudrelocations@gmail.com">cloudrelocations@gmail.com</a>
+                        </Typography>
                     </EmailAddress>
                 </FooterContactDesc>
             </FooterContactDescContainer>
@@ -127,9 +127,14 @@ const Footer = () => {
                             <WhatsApp fontSize='large' />
                         </IconButton>
                     </SocialMedia>
-                    <CopyRights>
-                        <p>&copy; 2023 Cloud Relocation.All rights reserved.</p>
-                    </CopyRights>
+                    <CopyRightsContainer>
+                        <CopyRights>
+                            <p>&copy; 2023 Cloud Relocations.All rights reserved.</p>
+                        </CopyRights>
+                        <Mrmj>
+                            <p>&copy; Design & Developed by @mrmjpatra</p>
+                        </Mrmj>
+                    </CopyRightsContainer>
                 </FooterBottom>
             </FooterMainContainer>
         </FooterContainer>
@@ -161,6 +166,9 @@ const FooterContactDesc = styled.div`
     grid-template-columns: 24.1% 0.1% 50% 0.1% 26%;
     justify-content: center;
     padding: 2rem;
+     a{
+        color: white;
+    }
     @media screen and (max-width: 820px) {
         grid-template-columns: 24.1% 0.1% 39% 0.1% 41%;
         left: 8%;
@@ -188,6 +196,7 @@ const Address = styled.div`
     align-items: center;
     justify-content: center;
     p{
+    
         width: 80%;
         text-align: center;
 
@@ -226,6 +235,7 @@ const PhoneNumber = styled.div`
         width: 68%;
         text-align: justify;
     }
+   
     @media screen and (max-width: 820px) {
         row-gap: 0.2rem;
         svg{
@@ -353,7 +363,7 @@ const Cities = styled.div`
     
 `;
 const FooterBottom = styled.div`
-
+    position: relative;
 `;
 const SocialMedia = styled.div`
     padding: 1rem 0;
@@ -361,9 +371,31 @@ const SocialMedia = styled.div`
     justify-content: center;
     
 `;
+const CopyRightsContainer=styled.div`
+    position: relative;
+    @media screen and (max-width: 540px) {
+        display: flex;
+        flex-direction: column;
+    }
+`
 const CopyRights = styled.div`
     text-align: center;
     p{
         padding: 1rem 0;
+    }
+`;
+const Mrmj = styled.div`
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: .2rem;
+    p{
+        padding: 1rem 0;
+    }
+    @media screen and (max-width: 540px) {
+        position: static;
+        p{
+        padding:0;
+    }
     }
 `;

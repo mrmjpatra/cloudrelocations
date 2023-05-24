@@ -1,6 +1,7 @@
 import { Box, Tab, Tabs, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
 import React, { useState } from 'react'
-import styled from 'styled-components';
+import styledComp from 'styled-components';
 import WithInCity from './WithInCity';
 import BetweenCities from './BetweenCities';
 import CityTempo from './CityTempo';
@@ -10,6 +11,24 @@ interface TabPanelProps {
   index: number;
   value: number;
 }
+
+const Responsive = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('lg')]: {
+    '.css-1h9z7r5-MuiButtonBase-root-MuiTab-root': {
+      padding: '0px 7px !important',
+      fontSize: '0.675rem !important',
+    }
+  },
+  [theme.breakpoints.up('xs')]: {
+    '.css-1h9z7r5-MuiButtonBase-root-MuiTab-root': {
+      padding: '0px 7px !important',
+      fontSize: '0.675rem !important',
+    }
+  },
+
+}))
+
+
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
@@ -22,7 +41,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{  }}>
+        <Box sx={{}}>
           <>{children}</>
         </Box>
       )}
@@ -45,13 +64,15 @@ const PopUpContact = () => {
   return (
     <PopUpContactContainer>
       <Typography variant='h5' color='#F15A29' margin='1rem 0'>Where are you going to relocate?</Typography>
-      <TabContainer>
-        <Tabss textColor="primary" indicatorColor="secondary" value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Within the City" {...a11yProps(0)} />
-          <Tab label="Between Cities" {...a11yProps(1)} />
-          <Tab label="City Tempo" {...a11yProps(2)} />
-        </Tabss>
-      </TabContainer>
+      <Responsive>
+        <TabContainer>
+          <Tabss textColor="primary" indicatorColor="secondary" value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Tab label="Within the City" {...a11yProps(0)} />
+            <Tab label="Between Cities" {...a11yProps(1)} />
+            <Tab label="City Tempo" {...a11yProps(2)} />
+          </Tabss>
+        </TabContainer>
+      </Responsive>
       <TabPanel value={value} index={0}>
         <WithInCity />
       </TabPanel>
@@ -66,7 +87,7 @@ const PopUpContact = () => {
 }
 
 export default PopUpContact;
-const PopUpContactContainer = styled.div`
+const PopUpContactContainer = styledComp.div`
   /* background: linear-gradient(180deg,#F15A29,#ED1E24); */
   background-color: white;
   box-shadow: 0 8px 32px #00aff04d;
@@ -93,14 +114,14 @@ const PopUpContactContainer = styled.div`
    }
   }    
 `;
-const TabContainer = styled.div`
+const TabContainer = styledComp.div`
     border-bottom: 1;
     border-color: 'divider';
   @media screen and (max-width: 540px) {
 
   }
 `;
-const Tabss = styled(Tabs)`
+const Tabss = styledComp(Tabs)`
     background-color:#F2F2F2;
     border-radius: 1rem;
     color: ${(props) => props.textColor === "secondary" ? "red" : "inherit"};

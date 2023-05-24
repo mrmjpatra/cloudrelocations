@@ -33,6 +33,11 @@ const HeaderContainers = styled.div`
     @media screen and (max-width: 540px) {
         padding: 1rem 1rem 0;
     }
+    @media screen and (max-width: 414px) {
+        padding: .7rem .4rem 0;
+        flex-direction: column-reverse;
+        row-gap: 1rem;
+    }
     @media screen and (max-width: 393px) {
         padding: .7rem .4rem 0;
         flex-direction: column-reverse;
@@ -41,7 +46,7 @@ const HeaderContainers = styled.div`
 `;
 const HeaderLeftContainers = styled.div`
     width: 50%;
-   @media screen and (max-width: 393px) {
+   @media screen and (max-width: 414px) {
     width: 80%;
    }
 `;
@@ -54,7 +59,7 @@ const TextContent = styled.div`
             font-size: 1.5rem;
         }
     }
-   @media screen and (max-width: 393px) {
+   @media screen and (max-width: 414px) {
     h5{
         margin-top: 0rem;
     }
@@ -74,7 +79,7 @@ const HeaderRightContainers = styled.div`
         width: 50%;
     }
    }
-   @media screen and (max-width: 393px) {
+   @media screen and (max-width: 414px) {
         width: 100%;
    }
 `;

@@ -1,10 +1,13 @@
 import { Typography } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components';
+import officeshifingimg from '../../assets/officeshifingimg.png'
+
 
 const Office = () => {
   return (
     <Container>
+        <img src={officeshifingimg} alt="" />
       <Typography variant='h3' color='#fd5d1c' textAlign='center'>Office Relocations</Typography>
       <hr color='#fd5d1c' />
       <Typography variant='body1'>Cloud Relocations is a trusted provider of comprehensive office moving
@@ -48,6 +51,25 @@ const Container = styled.div`
   }
   ul li{
     margin: 1rem 0;
+  }
+  @media screen and (max-width: 414px) {
+    margin: 0;
+    h3{
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    hr{
+      margin: .3rem auto;
+    }
+    p{
+      font-size: 1rem;
+    }
+    ul{
+    padding-left: 2rem;
+    }
+    ul li{
+      font-size: 1rem;
+    }
   }
 
 

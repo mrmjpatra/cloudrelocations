@@ -35,4 +35,27 @@ const BubbleWhatsapp=styled.div`
         width: 5.5rem;
         height:5.5rem;
       }
+  @media screen and (max-width: 540px) {
+    right: 0;
+    img{
+        width: 5rem;
+        height:5rem;
+      }
+  }
+  @media screen and (max-width: 414px) {
+    bottom: 15%;
+    right: 0;
+    img{
+      width: 4rem;
+      height:4rem;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    bottom: 2%;
+    right: 2%;
+    img{
+      width: 4rem;
+      height:4rem;
+    }
+  }
 `

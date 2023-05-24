@@ -54,6 +54,9 @@ const CityToCityContainer = styled.div`
         margin: .5rem auto;
     }
   }
+  @media screen and (max-width: 414px) {
+    padding-bottom: 5rem;
+  }
 `
 const TopHeaderContainer = styled.div`
     height: 10rem;
@@ -62,6 +65,21 @@ const TopHeaderContainer = styled.div`
     h4{
         margin: 2rem 0;
     }
+  @media screen and (max-width: 414px) {
+    h4{
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    padding: 2rem 1rem;
+    h4{
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: 0;
+    }
+  }
 `
 const ContentContainer = styled.div`
     margin-top: 1rem;
@@ -76,5 +94,20 @@ const ContentContainer = styled.div`
         font-size: 1.8rem;
         text-align: justify;
     }
+  @media screen and (max-width: 912px) {
+    h3{
+        font-size: 2.3rem;
+        font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 414px) {
+    padding: 2rem 0;
+    h3{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+  }
     
 `

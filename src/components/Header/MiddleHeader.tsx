@@ -3,13 +3,12 @@ import styled, { keyframes } from 'styled-components';
 import SiteLogo from '../../assets/Cloud.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { Modal } from '@mui/material';
+import { Modal, Typography } from '@mui/material';
 import PopUpContact from '../PopContact/PopUpContact2';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const MiddleHeader = () => {
   const location=useLocation().pathname;
-  console.log(location)
   const city=location.indexOf('/city');
   let cityName=''
   if (city!==-1) {
@@ -29,6 +28,7 @@ const MiddleHeader = () => {
     <MiddleHeaderContainer>
       <Logo onClick={() => navigate('/')}>
         <img src={SiteLogo} alt="SiteLogo" />
+        <Typography variant='h5'>Your Shifting | Our Responsibility</Typography>
       </Logo>
       <ContentContainer>
         <a href="tel:+919006167900">
@@ -70,21 +70,49 @@ const MiddleHeaderContainer = styled.div`
     @media screen and (max-width: 540px) {
       padding:0;
     }
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 414px) {
       padding-bottom:4rem;
     }
   
 
 `;
 const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   img{
     width: 6rem;
     height: 5rem;
+  }
+  h5{
+    font-weight: 500;
+    color: #F64217;
+    box-shadow: 7px 7px 8px #888888;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+  }
+  @media screen and (max-width: 912px) {
+    flex-direction: column;
+    gap: 0;
+    h5{
+        font-size: .8rem;
+    }
+  }
+  @media screen and (max-width: 820px) {
+    h5{
+        font-size: .8rem;
+        /* box-shadow: none; */
+    }
   }
   @media screen and (max-width: 540px) {
     img{
       width: 5rem;
       height: 4rem;
+    }
+  }
+  @media screen and (max-width: 414px) {
+    h5{
+      display: none;
     }
   }
 `;
@@ -95,7 +123,7 @@ const ContentContainer = styled.div`
   @media screen and (max-width:663px) {
     position: relative;
   }
-  @media screen and (max-width:393px) {
+  @media screen and (max-width:414px) {
     position: relative;
   }
  
@@ -195,7 +223,7 @@ const FreeQuote = styled.div`
     @media screen and (max-width: 540px) {
       border-top: 26.4px solid rgb(250, 66, 22);
     }
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 414px) {
       border-top: 3.2rem solid rgb(250, 66, 22);
     }
    
@@ -211,7 +239,7 @@ const FreeQuote = styled.div`
     font-weight: 500;
     padding: 5px 5px
   }
-  @media screen and (max-width:393px) {
+  @media screen and (max-width:414px) {
       position: absolute;
       font-size: 2.2rem;
       top: 4rem;

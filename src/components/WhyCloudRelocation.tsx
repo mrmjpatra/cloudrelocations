@@ -61,7 +61,8 @@ const Container = styled.div`
     padding: 1.5rem;
     border-radius: 0.7rem;
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
+        width: 100%;
         padding: .6rem;
         margin: auto;
   }
@@ -76,7 +77,7 @@ const IconContainer = styled.div`
         width: 3rem;
         height: 3rem;
     }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     width: 2.4rem;
     height: 2.3rem;
   }
@@ -92,7 +93,7 @@ const TextContainer = styled.div`
         letter-spacing: 0 !important;
     }
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     h5{
         font-size: 1.3rem;
         font-weight: 500;

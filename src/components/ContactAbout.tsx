@@ -73,7 +73,7 @@ const PopUpContactContainer=styled.div`
   @media screen and (max-width: 540px) {
     left: 8%;
   }
-    @media screen and (max-width: 393px) {
+    @media screen and (max-width: 414px) {
     left: 6.5%;
     }
 `
@@ -90,9 +90,11 @@ const ContactAboutContainer = styled.div`
     width: 97%;
     position: initial;
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     width: 100%;
+    row-gap: 3rem;
   }
+
 `;
 
 const AboutUs = styled.div`

@@ -32,6 +32,7 @@ export default HowItWork;
 const Container=styled.div`
     background-color: whitesmoke;
     padding: 1rem;
+   
     hr{
         width: 50%;
         margin: 1rem auto;
@@ -46,7 +47,8 @@ const Container=styled.div`
         margin: .6rem auto;
     }
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
+    padding-bottom: 5rem;
     h3{
       padding-top: 1rem;
     }
@@ -67,7 +69,7 @@ const HowItWorkContainer=styled.div`
     padding: 1.5rem;
     border-radius: .6rem;
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     padding: 1rem;
     border-radius: .5rem;
     margin: .5rem auto;
@@ -78,7 +80,7 @@ const Row=styled.div`
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     margin-bottom: 1rem;
   }
 
@@ -87,7 +89,7 @@ const ImageContainer=styled.div`
     
 `;
 const TextContainer=styled.div`
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     h5{
       font-size: 1rem;
       font-weight: 500;

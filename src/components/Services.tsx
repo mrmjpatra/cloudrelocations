@@ -84,7 +84,7 @@ const TextContainer = styled.div`
         margin: 0;
     }
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     h4{
         font-size: 1rem;
     }
@@ -113,7 +113,7 @@ const ProvidedServiceContainer = styled.div`
     gap: 1rem;
     padding: 1rem;
   }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     left: 0%;
     bottom: 1.3rem;
   }
@@ -152,7 +152,7 @@ const ServiceCard = styled.div`
     p{
         font-size: .8rem;
     }
-  @media screen and (max-width: 393px) {
+  @media screen and (max-width: 414px) {
     width: 3.7rem;
     height: 2.5rem;
     gap: .1rem;

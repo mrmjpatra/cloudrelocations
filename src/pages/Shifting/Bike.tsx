@@ -1,10 +1,13 @@
 import { Typography } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components';
+import householdimg from '../../assets/bikeshiftimg.png'
+
 
 const Bike = () => {
   return (
     <Container>
+        <img src={householdimg} alt="" />
        <Typography variant='h3' color='#fd5d1c' textAlign='center'>Bike Shifting</Typography>
       <hr color='#fd5d1c' />
       <Typography variant='body1'>Our Bike shifting service is one of the best packing and moving services in India. Making things easier we use heavy machinery transport system to relocate your Bike and bikes. You do not need to get worried at all, as our staffs are professional and they will ensure hassle-free relocation of your vehicles.</Typography>
@@ -50,6 +53,29 @@ const Container = styled.div`
   }
   ul li{
     margin: 1rem 0;
+  }
+  @media screen and (max-width: 414px) {
+    margin: 0;
+    h3{
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    hr{
+      margin: .3rem auto;
+    }
+    p{
+      font-size: 1rem;
+    }
+    h5{
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    ul li{
+      font-size: 1.2rem;
+    }
+    li{
+      margin:.5rem 0;
+    }
   }
 
 `
