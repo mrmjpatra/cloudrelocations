@@ -19,9 +19,9 @@ const About = () => {
 
 const DefaultAbout = () =>
   <AboutContainer>
-    <Typography variant='h3' color={'#F05A29'}>About Cloud Relocations Private Limited</Typography>
-    <Typography variant='body1'> About Cloud Relocations Private Limited
-      Cloud Relocations Private Limited One of the leading moving and
+    <Typography variant='h3' color={'#F05A29'}>About Cloud Relocations</Typography>
+    <Typography variant='body1'> About Cloud Relocations
+      Cloud Relocations One of the leading moving and
       sifting service providers Bhubaneswar as well as in India, we also
       present these services abroad. Though we have our main business
       headquarter in Bhubaneswar, we exactly present flawed house and

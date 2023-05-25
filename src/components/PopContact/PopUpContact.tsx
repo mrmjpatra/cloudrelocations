@@ -22,7 +22,7 @@ const Responsive = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     '.css-1h9z7r5-MuiButtonBase-root-MuiTab-root': {
       padding: '0px 7px !important',
-      fontSize: '0.675rem !important',
+      fontSize: '0.6rem !important',
     }
   },
 

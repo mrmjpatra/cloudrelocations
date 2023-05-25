@@ -44,7 +44,7 @@ const Privacy = () => {
             <Typography variant='h6'>If you have any queries about this privacy statement, the policies and practices of this site, or your dealings with this web site, please contact:</Typography>
             <ContactDetails>
                 <Typography variant='h4' color='#F05A29'>Corporate Office</Typography>
-                <Typography variant='h4' color='#F05A29'>Cloud Relocations Pvt. Ltd.</Typography>
+                <Typography variant='h4' color='#F05A29'>Cloud Relocations </Typography>
                 <Typography variant='h4' color='#F05A29'>Address:<span>OLDTOWN, BHUBANESWAR-751002</span> </Typography>
                 <Typography variant='h4' color='#F05A29'>Phone:<span>+91-9005003387</span> </Typography>
                 <Typography variant='h4' color='#F05A29'>E-Mail:<span>info@cloudrelocations.com</span></Typography>

@@ -14,7 +14,6 @@ const MiddleHeader = () => {
   if (city!==-1) {
     cityName=location.slice(6)
   }
-
   const [isOpen, setIsOpen] = useState(false);
   const myRef = useRef(null);
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ const MiddleHeader = () => {
       setIsOpen(true);
     }, 5000);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [location]);
   return (
     <MiddleHeaderContainer>
       <Logo onClick={() => navigate('/')}>

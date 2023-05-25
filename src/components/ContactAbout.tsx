@@ -90,6 +90,7 @@ const ContactAboutContainer = styled.div`
     width: 97%;
     position: initial;
   }
+
   @media screen and (max-width: 414px) {
     width: 100%;
     row-gap: 3rem;
@@ -98,7 +99,7 @@ const ContactAboutContainer = styled.div`
 `;
 
 const AboutUs = styled.div`
-    padding: 1rem 1rem;
+    padding: 1rem;
     display: grid; 
     place-content: center;
     text-align: justify;
@@ -106,6 +107,7 @@ const AboutUs = styled.div`
         margin-Top: 1rem;
     }
   @media screen and (max-width: 540px) {
+    padding-top: 5rem;
     h3{
         font-size: 2rem;
     }
@@ -118,6 +120,11 @@ const AboutUs = styled.div`
     }
     
   }
+  @media screen and (max-width: 414px) {
+    padding-top: 2rem;
+
+  }
+ 
 `;
 const IconButtonContainer = styled.div`
     margin-top: 1.5rem;
