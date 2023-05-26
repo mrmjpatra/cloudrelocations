@@ -3,6 +3,8 @@ import { Button, FormControl, FormHelperText, MenuItem, Select, TextField, Typog
 import React, { FormEvent, useState } from 'react'
 import styled from 'styled-components';
 import { topCityList } from '../../pages/CityWise/city';
+import emailjs from '@emailjs/browser';
+
 
 const WithInCity = () => {
     const [city, setCity] = useState('');
@@ -11,15 +13,34 @@ const WithInCity = () => {
     const [email, setEmail] = useState('')
     const [orginAddrs, setOrginAddrs] = useState('')
     const [destAddrs, setDestAddrs] = useState('')
-    const handleSubmit = (e: FormEvent) => {
+    const [date, setDate] = useState('');
 
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+        var templateParams = {
+            custName,
+            phoneNumber,
+            email,
+            city,
+            orginAddrs,
+            destAddrs,
+            date
+        };
+
+        emailjs.send('service_eqr5wbk', 'template_tzw7ww2', templateParams, 'hk2zPs2bNYI1ofWO_')
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function (err) {
+                console.log('FAILED...', err);
+            });
         setCity('')
         setCustName('')
         setPhoneNumber('')
         setEmail('')
         setOrginAddrs('')
         setDestAddrs('')
+        alert("Sent")
+
     }
     return (
         <WithInCityContainer>
@@ -44,15 +65,15 @@ const WithInCity = () => {
                         <FormHelperText>Select City</FormHelperText>
                     </FormControl>
                     <ExtraInputField>
-                        <TextField size='small' variant='outlined' label='Name' name={custName} value={custName} onChange={(e)=>setCustName(e.target.value)} />
-                        <TextField  size='small'variant='outlined' label='Phone Number' name={phoneNumber} value={phoneNumber} onChange={(e)=>setPhoneNumber(e.target.value)} />
-                        <TextField size='small' variant='outlined' label='Email' name={email} value={email} onChange={(e)=>setEmail(e.target.value)} />
+                        <TextField size='small' variant='outlined' label='Name' name={custName} value={custName} onChange={(e) => setCustName(e.target.value)} />
+                        <TextField size='small' variant='outlined' label='Phone Number' name={phoneNumber} value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+                        <TextField size='small' variant='outlined' label='Email' name={email} value={email} onChange={(e) => setEmail(e.target.value)} />
                     </ExtraInputField>
 
                     <Typography variant='h6'>Address</Typography>
                     <InputControlContainer>
                         <InputControl>
-                            <input type="text" name={orginAddrs} value={orginAddrs} placeholder='From' onChange={(e)=>setOrginAddrs(e.target.value)} />
+                            <input type="text" name={orginAddrs} value={orginAddrs} placeholder='From' onChange={(e) => setOrginAddrs(e.target.value)} />
                         </InputControl>
                         <LocationIcon>
                             <LocationOn />
@@ -60,12 +81,16 @@ const WithInCity = () => {
                     </InputControlContainer>
                     <InputControlContainer>
                         <InputControl>
-                            <input type="text" name={destAddrs} value={destAddrs} placeholder='To' onChange={(e)=>setDestAddrs(e.target.value)} />
+                            <input type="text" name={destAddrs} value={destAddrs} placeholder='To' onChange={(e) => setDestAddrs(e.target.value)} />
                         </InputControl>
                         <LocationIcon>
                             <LocationOn />
                         </LocationIcon>
                     </InputControlContainer>
+                    <dl>
+                        <dt>Date</dt>
+                        <dd><input type="date" onChange={(e)=>setDate(e.target.value)}/></dd>
+                    </dl>
                     <Button type='submit' fullWidth variant='contained'>Book Now</Button>
                 </form>
             </Container>
@@ -86,6 +111,18 @@ const Container = styled.div`
     form h6{
         margin-bottom: .3rem;
         font-size: 1rem;
+    }
+    input[type='date']{
+        width: 100%;
+        margin: 0.7rem 0;
+        height: 2rem;
+        border: 2px solid black;
+        border-radius: 0.2rem;
+        padding: 0.4rem;
+    }
+    dl dt{
+        font-size: 1.2rem;
+        font-weight: 500;
     }
 `
 const InputControlContainer = styled.div`
@@ -123,7 +160,7 @@ const LocationIcon = styled.div`
   }
 `;
 
-const ExtraInputField=styled.div`
+const ExtraInputField = styled.div`
     margin: .3rem 0;
     display: grid;
     row-gap: .5rem;

@@ -4,30 +4,31 @@ import styledComponent from 'styled-components';
 import { stateList } from './stateList';
 import { ThemeProvider, styled } from '@mui/material/styles'
 import { theme } from '../../styles/styles';
+import emailjs from '@emailjs/browser';
 
 const Responsive = styled('div')(({ theme }) => ({
     [theme.breakpoints.up('lg')]: {
-        '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root':{
+        '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root': {
             height: '3.6rem',
-            color:'rgb(42, 30, 166)'
+            color: 'rgb(42, 30, 166)'
         }
     },
     [theme.breakpoints.up('xs')]: {
         '.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input': {
             fontSize: '14px',
             padding: '.6rem 1rem',
-          },
-          '.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root':{
-            top:'-.4rem',
-            fontSize:'.9rem'
-          },
-          '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root':{
+        },
+        '.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
+            top: '-.4rem',
+            fontSize: '.9rem'
+        },
+        '.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root': {
             // height: '2.4rem',
-            color:'rgb(42, 30, 166)'
+            color: 'rgb(42, 30, 166)'
         }
 
     },
-   
+
 }))
 
 const Claims = () => {
@@ -52,54 +53,26 @@ const Claims = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        // console.log(custName)
-        // console.log(custAddrs)
-        // console.log(city)
-        // console.log(state)
-        // console.log(zipCode)
-        // console.log(email)
-        // console.log(phone)
-        // console.log(originAddrs)
-        // console.log(destAddrs)
-        // console.log(date)
-        // console.log(description)
-        const emailContent = `
-        ${custName.toUpperCase()}
-        ${custAddrs}
-        ${city}, ${state}, ${zipCode}
-        ${email}
-        ${phone}
-        ${date.split('-').reverse().join('-')}
-
-        (Cloud Reloca􏰁ons)
-        (Bhubaneswar)
-        (Odisha,751002)
-
-        Subject: Claim for Damaged Goods during Relocation 
-
-        Dear Cloud Relocations,
-        
-        I ${custName} writing this letter to bring your attention to the damages incurred to my belongings during the recent relocation conducted by Cloud relocations. I engaged your services for my move from ${originAddrs} to ${destAddrs} on ${date}.
-
-        I regret to inform you that several items have been significantly damaged as a result of inadequate handling and insufficient packing. The following is a detailed list of the damaged goods:
-        
-        Description:-
-        ${description}
-
-        I had entrusted your company with the responsibility of ensuring the safe transportation of my belongings, and I am extremely disappointed with the level of care provided during the process. I have attached photographs of the damaged items as evidence to support my claim.
-
-        I would appreciate it if you could initiate an investigation into the matter promptly and provide a resolution within [reasonable timeframe, e.g., 15 business days]. Please provide clear details regarding the compensation or replacement procedure, as well as any supporting documentation required to process my claim.
-
-        I would prefer an amicable resolution to this matter without the need for legal action. However, if we are unable to reach a satisfactory agreement, I may be compelled to seek legal recourse to protect my rights as a customer.
-
-        I look forward to your prompt attention to this matter and a resolution that upholds your commitment to customer satisfaction. Please acknowledge the receipt of this claim letter at your earliest convenience.
-                
-        Thank you for your immediate attention to this matter.
-        
-        Yours sincerely,
-        ${custName.toUpperCase()}
-        ${phone}`;
-        console.log(emailContent)
+        const d = date.split('-').reverse().join('-')
+        var templateParams = {
+            custName,
+            custAddrs,
+            city,
+            state,
+            zipCode,
+            email,
+            phone,
+            d,
+            originAddrs,
+            destAddrs,
+            description
+        };
+        emailjs.send('service_eqr5wbk', 'template_ks29hv9', templateParams, 'hk2zPs2bNYI1ofWO_')
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function (err) {
+                console.log('FAILED...', err);
+            });
 
         // Reset the form fields
         setCustName('');
@@ -112,6 +85,7 @@ const Claims = () => {
         setOriginAddrs('');
         setDestAddrs('');
         setDescription('');
+        alert("Sent")
     }
     return (
         <ThemeProvider theme={theme}>
@@ -127,7 +101,7 @@ const Claims = () => {
                                 <Name> <TextField variant='outlined' label='Name' type="text" name={custName} value={custName} onChange={(e) => setCustName(e.target.value)} /> </Name>
                                 <Address><TextField variant='outlined' label='Address' type="text" name={custAddrs} value={custAddrs} onChange={(e) => setCustAddrs(e.target.value)} /> </Address>
                                 <State>
-                                    <TextField  select onChange={(e) => setState(e.target.value)} defaultValue="Odisha" >
+                                    <TextField select onChange={(e) => setState(e.target.value)} defaultValue="Odisha" >
                                         {stateList.map((option) => (
                                             <MenuItem key={option.name} value={option.name}>
                                                 {option.name}

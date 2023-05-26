@@ -3,6 +3,7 @@ import { Button, FormControl, FormHelperText, MenuItem, Select, TextField, Typog
 import { FormEvent, useState } from 'react'
 import styled from 'styled-components';
 import { topCityList } from '../../pages/CityWise/city';
+import emailjs from '@emailjs/browser';
 
 const CityTempo = () => {
     const [city, setCity] = useState('');
@@ -11,15 +12,31 @@ const CityTempo = () => {
     const [email, setEmail] = useState('')
     const [orginAddrs, setOrginAddrs] = useState('')
     const [destAddrs, setDestAddrs] = useState('')
+    const [date, setDate] = useState('');
     const handleSubmit = (e: FormEvent) => {
-
         e.preventDefault();
+        var templateParams = {
+            custName,
+            phoneNumber,
+            email,
+            city,
+            orginAddrs,
+            destAddrs,
+            date
+        };
+        emailjs.send('service_eqr5wbk', 'template_tzw7ww2', templateParams, 'hk2zPs2bNYI1ofWO_')
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function (err) {
+                console.log('FAILED...', err);
+            });
         setCity('')
         setCustName('')
         setPhoneNumber('')
         setEmail('')
         setOrginAddrs('')
         setDestAddrs('')
+        alert("Sent")
     }
 
 
@@ -54,7 +71,7 @@ const CityTempo = () => {
                     <Typography variant='h6'>Address</Typography>
                     <InputControlContainer>
                         <InputControl>
-                            <input type="text" name="from" placeholder='From' />
+                            <input type="text" name={orginAddrs} value={orginAddrs} placeholder='From' onChange={(e) => setOrginAddrs(e.target.value)} />
                         </InputControl>
                         <LocationIcon>
                             <LocationOn />
@@ -62,13 +79,17 @@ const CityTempo = () => {
                     </InputControlContainer>
                     <InputControlContainer>
                         <InputControl>
-                            <input type="text" name="to" placeholder='To' />
+                            <input type="text" name={destAddrs} value={destAddrs} placeholder='To' onChange={(e) => setDestAddrs(e.target.value)} />
                         </InputControl>
                         <LocationIcon>
                             <LocationOn />
                         </LocationIcon>
                     </InputControlContainer>
-                    <Button fullWidth variant='contained'>Book Now</Button>
+                    <dl>
+                        <dt>Date</dt>
+                        <dd><input type="date" onChange={(e) => setDate(e.target.value)} /></dd>
+                    </dl>
+                    <Button onClick={handleSubmit} fullWidth variant='contained'>Book Now</Button>
                 </form>
             </Container>
         </div>
@@ -81,6 +102,18 @@ const Container = styled.div`
     form h6{
         margin-bottom: .3rem;
         font-size: 1rem;
+    }
+    input[type='date']{
+        width: 100%;
+        margin: 0.7rem 0;
+        height: 2rem;
+        border: 2px solid black;
+        border-radius: 0.2rem;
+        padding: 0.4rem;
+    }
+    dl dt{
+        font-size: 1.2rem;
+        font-weight: 500;
     }
     @media screen and (max-width: 540px) {
     h6{

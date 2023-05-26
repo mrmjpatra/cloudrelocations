@@ -17,7 +17,6 @@ const Payment = () => {
                 </QRReader>
                 <ContactDetails>
                     <Typography variant='h5'><b>Name : </b>Cloud Relocations</Typography>
-                    <Typography variant='h5'><b>Banking Name :</b> Mr Subhrajeet Ray</Typography>
                     <Typography variant='h5'><b>Email :</b> info@cloudrelocations.com </Typography>
                     <Typography variant='h5'><b>Phone Number:</b> +919006167900</Typography>
                 </ContactDetails>
