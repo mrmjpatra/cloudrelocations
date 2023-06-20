@@ -67,19 +67,13 @@ const TextContent = styled.div`
 `
 const HeaderRightContainers = styled.div`
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
    img{
     width: 80%;
     height: 50%;
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(8px 8px 8px black);
    }
-   @media screen and (max-width: 540px) {
-    justify-content: center;
-    img{
-        width: 50%;
-    }
-   }
-   @media screen and (max-width: 414px) {
-        width: 100%;
+   @media screen and (max-width: 640px) {
+    justify-content: flex-start;
    }
 `;

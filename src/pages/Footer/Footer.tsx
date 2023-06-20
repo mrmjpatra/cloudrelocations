@@ -148,7 +148,6 @@ const FooterContainer = styled.div`
     color: white;
     position: relative;
     @media screen and (max-width: 820px) {
-        margin-top: 7rem;
     }
 `;
 const FooterContactDescContainer = styled.div`
@@ -249,7 +248,7 @@ const PhoneNumber = styled.div`
             font-size: 0.9rem;
         }
     }
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 640px) {
     svg{
             font-size: 1.4rem;
         }
@@ -257,15 +256,9 @@ const PhoneNumber = styled.div`
             font-size: 1rem;
         } 
         p{
-            width: 39%;
+            width: 55%;
             font-size: 0.7rem;
         }
-  }
-  @media screen and (max-width: 393px) {
-    p{
-      width: 55%;
-
-    }
   }
 `;
 const EmailAddress = styled.div`

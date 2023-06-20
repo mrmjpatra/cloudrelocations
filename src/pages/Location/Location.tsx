@@ -46,6 +46,14 @@ const ToOtherCity = styled.div`
         width: 70%; 
         margin: 1rem auto;
     }
+    @media screen and (max-width: 640px) {
+        hr{
+          margin: .2rem auto;
+        }
+        h3{
+          font-size: 1.5rem;
+        }
+    }
 `;
 const CityListContainer = styled.div`
     width: 90%;
@@ -64,5 +72,12 @@ const CityListContainer = styled.div`
                 color: #fd0909;
             }
         }
+    }
+    @media screen and (max-width: 640px) {
+      width: 100%;
+      margin-left: 0;
+      ul{
+        grid-template-columns: 50% 50%;
+      }
     }
 `

@@ -108,6 +108,7 @@ const AboutUs = styled.div`
     }
   @media screen and (max-width: 540px) {
     padding-top: 5rem;
+    margin-top: 6rem;
     h3{
         font-size: 2rem;
     }

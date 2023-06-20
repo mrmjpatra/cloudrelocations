@@ -133,7 +133,6 @@ export default OurProcess;
 const OurProcessContainer = styled.div`
     background-color: whitesmoke;
     border-radius: .5rem;
-    /* text-align: center; */
     padding: 1rem;
 `;
 const ProcessContainer = styled.div`
@@ -141,15 +140,26 @@ const ProcessContainer = styled.div`
     padding: 2rem;
     display: grid;
     place-items: center;
+    @media screen and (max-width: 640px) {
+        grid-template-columns: 100%;
+        padding: 1rem;
+    }
 `;
 const Process1 = styled.div`
     display: grid;
     grid-template-columns: 30% 70%;
+    @media screen and (max-width: 640px) {
+        grid-template-columns: 100%;
+    }
    
 `;
 const Process2 = styled.div`
     display: grid;
     grid-template-columns: 70% 30%;
+    @media screen and (max-width: 640px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     
 `;
 const LeftOfProcess = styled.div`
@@ -158,6 +168,9 @@ const LeftOfProcess = styled.div`
 const RightOfProcess = styled.div`
     padding: 1rem;
     margin-left: 3rem;
+    @media screen and (max-width: 640px) {
+    margin-left: 0;
+    }
 
 `;
 
@@ -167,8 +180,8 @@ const ContentContainer = styled.div`
     
 `;
 const UnitLeft = styled.div`
-    width: 70px;
-    height: 70px;
+    width: 4.375rem;
+    height: 4.375rem;
     border-radius: 50%;
     background: #F05A29;
     color: #fff;
@@ -178,6 +191,9 @@ const UnitLeft = styled.div`
     line-height: 70px;
     box-shadow: 0 8px 32px #ff9674;
     /* margin: 0 auto; */
+    @media screen and (max-width: 640px) {
+        width: 11rem;
+    }
     
 `;
 const UnitBody = styled.div`
@@ -191,6 +207,12 @@ const UnitBody = styled.div`
         text-align: justify;
         margin: .5rem 0;
     }
+    @media screen and (max-width: 640px) {
+       p{
+            width: 100%;
+       }
+    }
+
     
 `;
 

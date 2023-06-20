@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components';
-import Mover from '../assets/moverinuniform.jpg'
+import Mover from '../assets/moverinuniform.png'
 
 const WhyUs = () => {
     return (
@@ -52,7 +52,7 @@ const WhyUSContainer = styled.div`
     margin: 0 auto 0;
     padding: 1rem 2rem;
   }
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 640px) {
     padding: 1rem 1rem;
   }
 `;

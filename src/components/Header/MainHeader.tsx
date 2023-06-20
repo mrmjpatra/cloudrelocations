@@ -103,8 +103,11 @@ const SubSubMenuList = styled.ul`
   top: 0;
   transition: all 500ms ease;
   background-color:  rgb(250, 66, 22);  
-  @media screen and (max-width: 820px) {
-
+  @media screen and (max-width: 640px) {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 1rem;
   }
 `;
 const SelectedSubSubList = styled.li<{ visible: boolean }>`

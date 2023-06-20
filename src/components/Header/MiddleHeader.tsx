@@ -17,12 +17,14 @@ const MiddleHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const myRef = useRef(null);
   const navigate = useNavigate();
+  const path=useLocation().pathname;
+  const timing=path==='/'?5000:10000
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsOpen(true);
-    }, 5000);
+    }, timing);
     return () => clearTimeout(timeout);
-  }, [location]);
+  }, [location,timing]);
   return (
     <MiddleHeaderContainer>
       <Logo onClick={() => navigate('/')}>
@@ -63,14 +65,23 @@ const MiddleHeaderContainer = styled.div`
      a{
       text-decoration: none;
      }
+     @media screen and (max-width: 762px) {
+       flex-direction: column;
+       gap: 1rem;
+     }
     @media screen and (max-width: 663px) {
-      padding-bottom:4rem;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      padding: 1rem 1rem 4rem .5rem;
     }
     @media screen and (max-width: 540px) {
-      padding:0;
+
     }
     @media screen and (max-width: 414px) {
-      padding-bottom:4rem;
+
     }
   
 
@@ -103,6 +114,11 @@ const Logo = styled.div`
         /* box-shadow: none; */
     }
   }
+  @media screen and (max-width: 640px) {
+    h5{
+      display: none;
+    }
+  }
   @media screen and (max-width: 540px) {
     img{
       width: 5rem;
@@ -110,17 +126,24 @@ const Logo = styled.div`
     }
   }
   @media screen and (max-width: 414px) {
-    h5{
-      display: none;
-    }
+   
   }
 `;
 const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 2.5rem;
+  @media screen and (max-width:762px) {
+     gap: 3rem;
+  }
   @media screen and (max-width:663px) {
     position: relative;
+    display: block;
+    display: flex;
+    
+  }
+  @media screen and (max-width:640px) {
+   width: 100%;
   }
   @media screen and (max-width:414px) {
     position: relative;
@@ -144,9 +167,9 @@ const pulse = keyframes`
 const Dialer = styled.div`
     position: relative;
     right: 0;
-    left: 26px;
-    height: 44px;
-    width: 44px;
+    left: 1.8rem;
+    height: 2.7rem;
+    width: 2.7rem;
     background-color: #F05A29;
     border-radius: 50%;
     display: flex;
@@ -178,6 +201,12 @@ const Dialer = styled.div`
       font-size: 26px;
       margin-right: 0px;
     }
+    @media screen and (max-width: 640px) {
+      ::after{
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+      }
+    }
    
 `;
 const DialerMenu = styled.div`
@@ -189,7 +218,7 @@ const DialerMenu = styled.div`
     outline: 0!important;
     font-size: 1.5rem;
     font-weight: 900;
-    margin-left: 54px;
+    margin-left: 2.6rem;
     line-height: 42px;
     :hover{
       color: #ff3115;
@@ -198,9 +227,9 @@ const DialerMenu = styled.div`
 `;
 const FreeQuote = styled.div`
     color: #fff;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 700;
-    padding: 18px 40px;
+    padding: 1.094rem 2.4rem;
     position: relative;
     font-family: "Poppins";
     background-color: #fa4216;
@@ -216,33 +245,38 @@ const FreeQuote = styled.div`
       border-top: 54.4px solid rgb(250, 66, 22);
       transition: all 500ms ease 0s;
       border-left: 40.5px solid transparent;
-      @media screen and (max-width: 663px) {
-      border-top: 3.9rem solid rgb(250, 66, 22);
+    @media screen and (max-width: 768px) {
+      border-top: 3.4rem solid rgb(250, 66, 22);
     }
+    @media screen and (max-width: 762px) {
+      border-top: 3.4rem solid rgb(250, 66, 22);
+    }
+    @media screen and (max-width: 663px) {
+      border-top: 3.4rem solid rgb(250, 66, 22);
+    }
+
     @media screen and (max-width: 540px) {
       border-top: 26.4px solid rgb(250, 66, 22);
     }
     @media screen and (max-width: 414px) {
-      border-top: 3.2rem solid rgb(250, 66, 22);
+      border-top: 2.4rem solid rgb(250, 66, 22);
     }
    
   }  
-  @media screen and (max-width:663px) {
+  @media screen and (max-width:640px) {
+    padding: 0.795rem 2.4rem;
     position: absolute;
-    font-size: 1.4rem;
-    top: 4rem;
-    left: -64%;
+    font-size: 1.5rem;
+    top: 0;
+    right: 0;
   }
   @media screen and (max-width: 540px) {
-    font-size: 14px;
     font-weight: 500;
     padding: 5px 5px
   }
   @media screen and (max-width:414px) {
       position: absolute;
-      font-size: 2.2rem;
       top: 4rem;
-      left: -4rem;
   }
  
 `;

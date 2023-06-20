@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Options, Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { testimonialList } from './testimonial';
+
 const Reviews = () => {
     const options: Options = {
         type: 'loop',
