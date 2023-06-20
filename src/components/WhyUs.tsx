@@ -32,7 +32,7 @@ const WhyUs = () => {
                     </li>
                 </WhyUsLeft>
                 <WhyUsRight>
-                    <img src={Mover} alt="Mover in uniform" />
+                    <img src={Mover} alt="Mover in uniform"  loading='lazy'/>
                 </WhyUsRight>
             </WhyUSContainer>
         </div>
