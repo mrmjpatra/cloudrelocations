@@ -119,19 +119,13 @@ const WhyUsLeft = styled.div`
     
 `;
 const WhyUsRight = styled.div`
-    display: grid;
-    place-items: center;
+    width: 90rem;
+    height: 25rem;
     img{
+        filter: drop-shadow(8px 8px 8px black);
         border-radius: 1rem;
-        width: 30rem;
-        height: 20rem;
-    }
-  @media screen and (max-width: 820px) {
-        img{
-            width: 20rem;
-        height: 12rem;
-        }
-       
+        width: 100%;
+        height: 90%;
     }
   @media screen and (max-width: 540px) {
     display: none;

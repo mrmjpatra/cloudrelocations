@@ -69,8 +69,8 @@ const HeaderRightContainers = styled.div`
     display: flex;
     justify-content: flex-end;
    img{
-    width: 80%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     filter: drop-shadow(8px 8px 8px black);
    }
    @media screen and (max-width: 640px) {

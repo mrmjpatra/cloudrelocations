@@ -126,6 +126,24 @@ const Card=styled.div`
         height: 3.5rem;
     }
   }
+  @media screen and (max-width: 532px) {
+    width: 80%;
+    border-radius: 1rem;
+    padding: 1rem;
+    img{
+        width: 3rem;
+        height: 3rem;
+        top: 0;
+    }
+  }
+
+  @media screen and (max-width: 453px) {
+    width: 90%;
+    img{
+        width: 3rem;
+        height: 3rem;
+    }
+  }
   @media screen and (max-width: 414px) {
         width: 73%;
         border-radius: 0.5rem;
@@ -137,6 +155,10 @@ const Card=styled.div`
         img{
             top: 8%;
         }
+  }
+  @media screen and (max-width: 352px) {
+    width: 100%;
+    margin: 1rem;
   }
 
 `

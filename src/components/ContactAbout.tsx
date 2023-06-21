@@ -13,11 +13,9 @@ const ContactAbout = () => {
         <ContactAboutMainContainer>
             <AnimationOnScroll animateOnce={true} animateIn="animate__bounceIn">
                 <ContactAboutContainer>
-                   <MainPopUpContainer>
-                   <PopUpContactContainer>
-                        <PopUpContact/>
-                    </PopUpContactContainer>
-                   </MainPopUpContainer>
+                <MainPopUpContainer>
+                      <PopUpContact/>
+                </MainPopUpContainer>
                     <AboutUs>
                         <Typography variant='h3' color='#F15A29'>ABOUT</Typography>
                         <Typography variant='h4'>TRANSPORT & LOGISTICS</Typography>
@@ -41,6 +39,7 @@ const ContactAbout = () => {
                             </IconButton>
                         </IconButtonContainer>
                     </AboutUs>
+                    
                 </ContactAboutContainer>
             </AnimationOnScroll>
         </ContactAboutMainContainer>
@@ -51,32 +50,15 @@ export default ContactAbout;
 const ContactAboutMainContainer=styled.div`
     background-color: whitesmoke;
     padding-bottom: 5rem;
+    position: relative;
   @media screen and (max-width: 540px) {
     padding-bottom: 1rem;
   }
 `
 const MainPopUpContainer=styled.div`
-        /* position: relative; */
-        height: 35rem;
-        margin-bottom: 1rem;
-  @media screen and (max-width: 540px) {
-    height: 30rem;
-  }
+    position: relative;
 `
-const PopUpContactContainer=styled.div`
-     position: absolute;
-     top: -12%;
-  @media screen and (max-width: 820px) {
-    top: 1%;
-    left: 25%;
-  }
-  @media screen and (max-width: 540px) {
-    left: 8%;
-  }
-    @media screen and (max-width: 414px) {
-    left: 6.5%;
-    }
-`
+
 const ContactAboutContainer = styled.div`
     display: grid;
     grid-template-columns: 55% 45%;
@@ -85,15 +67,11 @@ const ContactAboutContainer = styled.div`
     margin: auto;
     position: relative;
   @media screen and (max-width: 820px) {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-    width: 97%;
-    position: initial;
-  }
-
-  @media screen and (max-width: 414px) {
+    grid-template-columns: 100%;
     width: 100%;
-    row-gap: 3rem;
+  }
+  @media screen and (max-width: 640px) {
+    
   }
 
 `;

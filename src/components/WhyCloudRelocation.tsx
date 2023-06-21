@@ -30,8 +30,8 @@ export default WhyCloudRelocation;
 
 const MainContainer = styled.div`
     background-color: whitesmoke;
-    height: 100%;
     padding: 2rem;
+    padding-bottom: 4rem;
     hr{
         width: 50%;
         margin: 1rem auto;

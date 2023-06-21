@@ -19,8 +19,8 @@ const Footer = () => {
                         <Phone color='error' fontSize='large' />
                         <Typography variant='h5'>Phone Number</Typography>
                         <Typography variant='body1'>
-                        <a href="tel:+919006106900">+919006106900</a>&nbsp;
-                        <a href="tel:+919006167900">+919006167900</a>
+                            <a href="tel:+919006106900">+919006106900</a>&nbsp;
+                            <a href="tel:+919006167900">+919006167900</a>
                         </Typography>
                     </PhoneNumber>
                     <hr />
@@ -146,12 +146,17 @@ const FooterContainer = styled.div`
     margin-top: 10rem;
     background-color: white;
     color: white;
-    position: relative;
-    @media screen and (max-width: 820px) {
-    }
+   
 `;
 const FooterContactDescContainer = styled.div`
     background-color:#15113c ;
+    position: relative;
+    h5{
+        font-size: 1rem;
+    }
+    @media screen and (max-width: 640px) {
+        margin-top: 6rem;
+    }
 
 `;
 const FooterContactDesc = styled.div`
@@ -159,49 +164,44 @@ const FooterContactDesc = styled.div`
     background-color: rgb(12 10 39);
     border-radius: 2rem;
     position: absolute;
-    bottom: 75%;
-    left: 26.5%;
+    bottom: -6rem;
+    left: 25%;
     display: grid;
-    grid-template-columns: 24.1% 0.1% 50% 0.1% 26%;
+    grid-template-columns: 27.1% 0.1% 39% 0.1% 33%;
     justify-content: center;
     padding: 2rem;
      a{
         color: white;
     }
-    @media screen and (max-width: 820px) {
-        grid-template-columns: 24.1% 0.1% 39% 0.1% 41%;
-        left: 8%;
-        right: 8%;
-        padding: 1rem;
-        bottom: 74%;
+    @media screen and (max-width: 	1024px) {
+        left: 14.6%;
     }
-  @media screen and (max-width: 540px) {
-    border-radius: .7rem;
-    row-gap: 0.8rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: 25.1% 0% 33% 0.1% 25%;
-    bottom: 87%;
-    left: 8%;
-    padding: 0.5rem;
-  }
-  @media screen and (max-width: 393px) {
-    bottom: 80%;
-  }
+    @media screen and (max-width: 820px) {
+        left: 7%;
+    }
+    @media screen and (max-width: 768px) {
+        left: 0;
+        border-radius: 0;
+    }
+    @media screen and (max-width: 640px) {
+        grid-template-columns: 100%;
+        width: 100%;
+        border-radius: 1rem 0.5rem 0 0;
+        padding: 1.5rem;
+        row-gap: .5rem;
+    }
 `;
 const Address = styled.div`
-    row-gap: 0.9rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     p{
-    
+        font-size: .8rem;
         width: 80%;
         text-align: center;
-
     }
     @media screen and (max-width: 820px) {
-        row-gap: 0.2rem;
         svg{
             font-size: 1.5rem;
         }
@@ -212,6 +212,8 @@ const Address = styled.div`
             font-size: 0.9rem;
         }
     }
+  @media screen and (max-width: 640px) {
+  }
   @media screen and (max-width: 540px) {
         svg{
             font-size: 1.4rem;
@@ -219,24 +221,19 @@ const Address = styled.div`
         h5{
             font-size: 1rem;
         } 
-        p{
-            font-size: 0.7rem;
-        }
   }
 `;
 const PhoneNumber = styled.div`
-    row-gap: 0.9rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     p{
-        width: 68%;
+        width: 90%;
         text-align: justify;
     }
    
     @media screen and (max-width: 820px) {
-        row-gap: 0.2rem;
         svg{
             font-size: 1.5rem;
         }
@@ -244,7 +241,7 @@ const PhoneNumber = styled.div`
             font-size: 1.3rem;
         } 
         p{
-            width: 85%;
+            width: 93%;
             font-size: 0.9rem;
         }
     }
@@ -256,22 +253,20 @@ const PhoneNumber = styled.div`
             font-size: 1rem;
         } 
         p{
-            width: 55%;
-            font-size: 0.7rem;
+            width: 90%;
+            text-align: center;
         }
   }
 `;
 const EmailAddress = styled.div`
-    row-gap: 0.9rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     p{
-        width: 96%;
+        width: 87%;
     }
     @media screen and (max-width: 820px) {
-        row-gap: 0.2rem;
         svg{
             font-size: 1.5rem;
         }
@@ -282,17 +277,20 @@ const EmailAddress = styled.div`
             font-size: 0.9rem;
         }
     }
-    @media screen and (max-width: 540px) {
-    svg{
-            font-size: 1.4rem;
-        }
-        h5{
-            font-size: 1rem;
-        } 
-        p{
-            width: 35%;
-            font-size: 0.7rem;
-        }
+  @media screen and (max-width: 640px) {
+    p{
+        width: 33%;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    p{
+        width: 45%;
+    }
+  }
+  @media screen and (max-width: 414px) {
+    p{
+        width: 52%;
+    }
   }
   @media screen and (max-width: 393px) {
     p{
@@ -338,7 +336,20 @@ const FooterTop = styled.div`
     @media screen and (max-width: 540px) {
         grid-template-columns: 1fr 1fr;
         /* justify-items: start; */
-        place-items: center;
+        justify-items: flex-start;
+    }
+    @media screen and (max-width: 375px) {
+        margin-top: 7rem;
+       h5{
+        font-size: 1rem;
+       }
+       ul{
+        margin-top: 0.3rem;
+       }
+       li{
+        font-size: .6rem;
+        line-height: 1rem;
+       }
     }
 
 `;
@@ -364,7 +375,7 @@ const SocialMedia = styled.div`
     justify-content: center;
     
 `;
-const CopyRightsContainer=styled.div`
+const CopyRightsContainer = styled.div`
     position: relative;
     @media screen and (max-width: 540px) {
         display: flex;

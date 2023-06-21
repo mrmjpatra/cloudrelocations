@@ -115,9 +115,9 @@ const Logo = styled.div`
     }
   }
   @media screen and (max-width: 640px) {
-    h5{
+    /* h5{
       display: none;
-    }
+    } */
   }
   @media screen and (max-width: 540px) {
     img{
@@ -258,6 +258,9 @@ const FreeQuote = styled.div`
     @media screen and (max-width: 540px) {
       border-top: 26.4px solid rgb(250, 66, 22);
     }
+    @media screen and (max-width: 549px) {
+      border-top: 2.35rem solid rgb(250, 66, 22);
+    }
     @media screen and (max-width: 414px) {
       border-top: 2.4rem solid rgb(250, 66, 22);
     }
@@ -270,12 +273,14 @@ const FreeQuote = styled.div`
     top: 0;
     right: 0;
   }
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 620px) {
+    top: 2.8rem;
+  }
+  @media screen and (max-width: 549px) {
     font-weight: 500;
-    padding: 5px 5px
+    padding: 5px 5px;
   }
   @media screen and (max-width:414px) {
-      position: absolute;
       top: 4rem;
   }
  

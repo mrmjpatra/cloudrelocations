@@ -38,7 +38,7 @@ export default Location;
 
 const Container = styled.div`
   background-color: white;
-
+  padding-bottom: 5rem;
 `
 const ToOtherCity = styled.div`
   padding-top: 1rem;
